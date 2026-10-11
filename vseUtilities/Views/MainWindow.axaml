@@ -1,0 +1,69 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:vseUtilities.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="420" d:DesignHeight="450"
+        x:Class="vseUtilities.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="vseUtilities - MCP Tool Manager"
+        Width="420"
+        Height="450"
+        CanResize="False"
+        SizeToContent="Manual">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto,*,Auto,Auto,Auto" Margin="12">
+        <TextBlock Grid.Row="0"
+                   Text="Select the MCP tools to include in the exported .mcp.json"
+                   FontSize="14"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,8" />
+
+        <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="1">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                          VerticalScrollBarVisibility="Auto"
+                          AllowAutoHide="False">
+                <ItemsControl ItemsSource="{Binding Tools}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="Auto,*" Margin="6,6,20,6">
+                                <CheckBox Grid.Column="0"
+                                          IsChecked="{Binding IsSelected}"
+                                          VerticalAlignment="Center" />
+                                <StackPanel Grid.Column="1" Margin="8,0" Spacing="2">
+                                    <TextBlock Text="{Binding Name}" />
+                                    <TextBlock Text="{Binding LastModifiedUtc, StringFormat='Modified: {0:yyyy-MM-dd HH:mm} UTC'}"
+                                               FontSize="11"
+                                               Foreground="Gray" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Border>
+
+        <TextBlock Grid.Row="2"
+                   Text="{Binding StatusMessage}"
+                   Margin="0,8"
+                   TextWrapping="Wrap" />
+
+        <Grid Grid.Row="3" ColumnDefinitions="*,*" >
+            <Button Grid.Column="0" Content="Add MCP" Command="{Binding AddMcpCommand}" ToolTip.Tip="Browse for a .csproj to add a new MCP tool to the list" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="0,0,4,0" />
+            <Button Grid.Column="1" Content="Delete MCP" Command="{Binding DeleteMcpCommand}" ToolTip.Tip="Remove the checked tool(s) from the list" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="4,0,0,0" />
+        </Grid>
+
+        <Grid Grid.Row="4" ColumnDefinitions="*,*" Margin="0,8,0,0">
+            <Button Grid.Column="0" Content="Refresh" Command="{Binding RefreshToolsCommand}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="0,0,4,0" />
+            <Button Grid.Column="1" Content="Export JSON" Command="{Binding ExportCommand}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="4,0,0,0" />
+        </Grid>
+    </Grid>
+
+</Window>

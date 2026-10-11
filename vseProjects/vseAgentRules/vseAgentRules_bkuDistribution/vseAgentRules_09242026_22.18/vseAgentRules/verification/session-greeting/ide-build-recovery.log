@@ -1,0 +1,10 @@
+After the user reported stopping vseAgentRules, the IDE solution build succeeded.
+Observed evidence saved during final check at 2026-09-24T22:07:10.6328285-04:00.
+
+Build started at 10:06 PM...
+1>------ Build started: Project: vseAgentRules, Configuration: Debug Any CPU ------
+1>  vseAgentRules -> C:\Users\aasro\Desktop\vseAgentRules\vseAgentRules\bin\Debug\net10.0\vseAgentRules.dll
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+========== Build completed at 10:06 PM and took 00.325 seconds ==========
+
+No diagnostics appeared in the returned build output. Earlier locked-apphost failures remain in ide-build.log and contracts-1 logs. The agent did not restart the MCP server or verify a live client's updated responses.

@@ -1,0 +1,60 @@
+Started: 2026-09-24T21:13:53.4710900-04:00; PID: 84432
+Contract checks validate returned content, not future agent compliance.
+PASS Rule numbering and ledger
+PASS Explicit rule/clause references
+PASS Tier coverage
+PASS SOP uses full rules
+PASS Published tool names and signatures
+PASS Returned constants remain connected
+PASS Rules: exact status legend
+PASS Plan: exact status legend
+PASS Progress: exact status legend
+PASS Session: exact status legend
+PASS Cheat sheet: exact status legend
+PASS Plan: valid Markdown tables
+PASS Progress: valid Markdown tables
+PASS Testing: valid Markdown tables
+PASS Plan: references resolve against canonical rules
+PASS Progress: references resolve against canonical rules
+PASS Testing: references resolve against canonical rules
+PASS Session: references resolve against canonical rules
+PASS Cheat sheet: references resolve against canonical rules
+PASS Pause reminder: references resolve against canonical rules
+PASS Rule 8G: chunking defaults
+PASS Rule 8H: verified-only visible completion
+PASS Rule 8I: honest timing
+PASS Rule 8J: evidence and closure
+PASS Rule 8K: truthful check-ins
+PASS Rule 8L: safe interruption recovery
+PASS Rule 8M: explicit unfinished handoff
+PASS Rules 4/5: approval and durable resume
+PASS Rule 13: brevity preserves progress
+PASS Rule 26: records and history agree
+PASS Plan: full chunk contract
+PASS Progress: durable evidence and recovery fields
+PASS Testing: retained run evidence
+PASS Session reminder: default workflow and honest limits
+PASS Pause return and metadata preserve approved continuation
+PASS No legacy conflicting prompts
+PASS Reject empty rules
+PASS Reject missing rule
+PASS Reject duplicate rule
+PASS Reject wrong ledger
+PASS Reject nonexistent rule reference
+PASS Reject nonexistent clause reference
+PASS Accept wrapped valid reference
+PASS Reject wrapped nonexistent reference
+PASS Reject missing tier membership
+PASS Reject swapped safety and process tiers
+PASS Accept compound references
+PASS Reject invalid slash clause
+PASS Reject invalid range endpoint
+PASS Reject invalid plural reference
+PASS Reject invalid parenthesized continuation
+PASS Reject reversed clause range
+PASS Reject missing status
+PASS Reject false completed status
+PASS Reject malformed table
+PASS Reject missing table
+PASS Export compiled returned content
+Finished: 2026-09-24T21:13:53.6209446-04:00; elapsed: 00:00:00.1505130; 57 passed, 0 failed.

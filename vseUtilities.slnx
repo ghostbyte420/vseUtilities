@@ -1,0 +1,29 @@
+<Solution>
+  <Folder Name="/buildVerifier/">
+    <File Path="buildVerifier/inspector.ps1" />
+    <File Path="buildVerifier/README.md" />
+  </Folder>
+  <Folder Name="/documents/">
+    <File Path="documents/vseAgentRules_Manual.md" />
+  </Folder>
+  <Folder Name="/global.mcp/">
+    <File Path=".mcp.json" />
+  </Folder>
+  <Folder Name="/vseProjects/" />
+  <Folder Name="/vseProjects/vseAgentRules/">
+    <Project Path="vseProjects/vseAgentRules/vseAgentRules_09272026_Latest/vseAgentRules/vseAgentRules.csproj" />
+  </Folder>
+  <Folder Name="/vseProjects/vseDecompiler/" Id="219d77d6-e06b-a013-6c51-06e263af83d8">
+    <Project Path="vseProjects/vseDecompiler/vseDecompiler_10092026_Latest/vseDecompiler/vseDecompiler.csproj" />
+  </Folder>
+  <Folder Name="/vseProjects/vseMediaSearch/">
+    <Project Path="vseProjects/vseMediaSearch/vseMediaSearch_09272026_Latest/vseMediaSearch/vseMediaSearch.csproj" />
+  </Folder>
+  <Folder Name="/vseProjects/vseTranslator/" Id="4307ccd4-62b7-c97e-54a4-8a154ec9d96e">
+    <Project Path="vseProjects/vseTranslator/vseTranslator_10102026_Latest/vseTranslator/vseTranslator.csproj" />
+  </Folder>
+  <Folder Name="/vseProjects/vseUOAware/">
+    <Project Path="vseProjects/vseUOAware/vseUOAware_09272026_Latest/vseUOAware/vseUOAware.csproj" />
+  </Folder>
+  <Project Path="vseUtilities/vseUtilities.csproj" />
+</Solution>

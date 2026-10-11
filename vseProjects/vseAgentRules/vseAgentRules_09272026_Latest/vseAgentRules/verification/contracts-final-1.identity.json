@@ -1,0 +1,8 @@
+{
+    "WorkingDirectory":  "C:\\Users\\aasro\\Desktop\\vseAgentRules_09172026_Latest",
+    "ObservedStart":  "2026-09-24T21:13:48.0805231-04:00",
+    "ProcessId":  54580,
+    "TimeoutSeconds":  300,
+    "Command":  "dotnet run --project tests/RulesContractTests/RulesContractTests.csproj -- vseAgentRules/verification/generated-final",
+    "ProcessStart":  "2026-09-24T21:13:48.0741429-04:00"
+}

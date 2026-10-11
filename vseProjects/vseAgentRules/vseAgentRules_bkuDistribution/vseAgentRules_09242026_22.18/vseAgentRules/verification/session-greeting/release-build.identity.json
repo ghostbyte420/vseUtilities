@@ -1,0 +1,8 @@
+﻿{
+    "WorkingDirectory":  "C:\\Users\\aasro\\Desktop\\vseAgentRules",
+    "ObservedStart":  "2026-09-24T22:04:22.6928133-04:00",
+    "TimeoutSeconds":  300,
+    "PID":  61140,
+    "Command":  "dotnet build vseAgentRules.slnx --configuration Release --no-restore",
+    "ProcessStart":  "2026-09-24T22:04:22.7000060-04:00"
+}

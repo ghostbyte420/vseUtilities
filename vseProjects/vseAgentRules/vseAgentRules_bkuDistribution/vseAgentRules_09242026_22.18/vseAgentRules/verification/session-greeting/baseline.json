@@ -1,0 +1,26 @@
+﻿{
+    "Scope":  "Fresh session names and local-time greetings",
+    "ObservedStart":  "2026-09-24T21:53:33.3856451-04:00",
+    "SourceHashes":  [
+                         {
+                             "SHA256":  "F41DAB207E71CDC88112DF5F9D5034D882B01CE1228F62801F5E4D01F3F7F466",
+                             "Path":  "vseAgentRules\\Rules\\AgentRules.cs"
+                         },
+                         {
+                             "SHA256":  "9DD0937C3426DC5DF0F58B38FD0D540D32A2040480360558C0DFAF51463B3904",
+                             "Path":  "vseAgentRules\\Tools\\AgentRulesTool.cs"
+                         },
+                         {
+                             "SHA256":  "52A45E0874FDB59443B42813BC90EC7F675604CFD243BF3AB0122410EC989A82",
+                             "Path":  "tests\\RulesContractTests\\Program.cs"
+                         },
+                         {
+                             "SHA256":  "05C99E6E5F35A0925C6D4BB79CB35D008F593503E529FAEF86708D22122103BB",
+                             "Path":  "README.md"
+                         },
+                         {
+                             "SHA256":  "78EBB880761CF13256B759DB043ECAC3894B0816AA148C054DEF90872EAB6C6F",
+                             "Path":  ".github\\copilot-instructions.md"
+                         }
+                     ]
+}

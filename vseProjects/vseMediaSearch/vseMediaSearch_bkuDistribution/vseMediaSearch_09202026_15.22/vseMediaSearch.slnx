@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="vseMediaSearch/vseMediaSearch/vseMediaSearch.csproj" />
+  <Project Path="vseMediaSearch/vseMediaSearch.Tests/vseMediaSearch.Tests.csproj" />
+</Solution>
+

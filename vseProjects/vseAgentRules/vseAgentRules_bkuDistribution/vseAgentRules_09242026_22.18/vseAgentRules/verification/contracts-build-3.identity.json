@@ -1,0 +1,8 @@
+{
+    "WorkingDirectory":  "C:\\Users\\aasro\\Desktop\\vseAgentRules_09172026_Latest",
+    "ObservedStart":  "2026-09-24T20:59:07.5316223-04:00",
+    "ProcessId":  47252,
+    "TimeoutSeconds":  300,
+    "Command":  "dotnet build tests/RulesContractTests/RulesContractTests.csproj --nologo --disable-build-servers",
+    "ProcessStart":  "2026-09-24T20:59:07.5261361-04:00"
+}

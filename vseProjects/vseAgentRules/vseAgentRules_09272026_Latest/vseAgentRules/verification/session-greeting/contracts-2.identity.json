@@ -1,0 +1,8 @@
+﻿{
+    "WorkingDirectory":  "C:\\Users\\aasro\\Desktop\\vseAgentRules",
+    "ObservedStart":  "2026-09-24T22:00:45.8618136-04:00",
+    "TimeoutSeconds":  300,
+    "PID":  77220,
+    "Command":  "dotnet run --configuration Release --project tests/RulesContractTests/RulesContractTests.csproj -- \"C:\\Users\\aasro\\Desktop\\vseAgentRules\\vseAgentRules\\verification\\session-greeting\\generated-2\"",
+    "ProcessStart":  "2026-09-24T22:00:45.8714845-04:00"
+}

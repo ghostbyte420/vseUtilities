@@ -1,0 +1,10 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  vseAgentRules -> C:\Users\aasro\Desktop\vseAgentRules_09172026_Latest\vseAgentRules\bin\Debug\net10.0\vseAgentRules.dll
+  RulesContractTests -> C:\Users\aasro\Desktop\vseAgentRules_09172026_Latest\tests\RulesContractTests\bin\Debug\net10.0\RulesContractTests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:03.52

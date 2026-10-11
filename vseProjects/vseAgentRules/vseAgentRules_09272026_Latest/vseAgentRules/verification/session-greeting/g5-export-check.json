@@ -1,0 +1,48 @@
+﻿{
+    "ObservedCheckStart":  "2026-09-24T22:07:10.5791262-04:00",
+    "ContractExit":  0,
+    "Exports":  [
+                    {
+                        "Export":  "testing-template",
+                        "Result":  "Source match after line-ending normalization",
+                        "SHA256":  "2136687DAE469325838D866830E879883046C719383E9592F32E7F0AEAACD448"
+                    },
+                    {
+                        "Export":  "progress-template",
+                        "Result":  "Source match after line-ending normalization",
+                        "SHA256":  "6D71B0D372C4EA6F959C71D94FDF6D7472F115534BD71A74CEFD46BA80849721"
+                    },
+                    {
+                        "Export":  "session-checklist",
+                        "Result":  "Source match after line-ending normalization",
+                        "SHA256":  "C78F0BEB9924E8BFF8C2B6A75AFECD2FFB005D7774144E97E3E91B62E8496068"
+                    },
+                    {
+                        "Export":  "plan-template",
+                        "Result":  "Source match after line-ending normalization",
+                        "SHA256":  "9D12214672F7AD85586B80CE6DB0407001A0E3336F8A93B9B65B6F8DFAAD1D2A"
+                    },
+                    {
+                        "Export":  "rules",
+                        "Result":  "Source match after line-ending normalization",
+                        "SHA256":  "BCF7B0BA64FC6D74A9F8132FC2029F7C2F59BFC6AA4B584363704A4C4968B1AC"
+                    },
+                    {
+                        "Export":  "cheat-sheet",
+                        "Result":  "Source match after line-ending normalization",
+                        "SHA256":  "F6CDEFFA2FF43DF2358FEEFEC51005ACB470E4CBC93AD8CEFCD024A912EF9F41"
+                    },
+                    {
+                        "Export":  "pause-reminder",
+                        "Result":  "Exact source match",
+                        "SHA256":  "A6B5DF14F53971266722F6AF0F87F5E59E5336A3910FCA76087263E6F2ED73B2"
+                    }
+                ],
+    "Timing":  "G5 active duration unavailable across interruption; user wait not counted as active work",
+    "RetainedVerificationFailure":  "First comparison used semicolon as boundary inside quoted string; corrected to next method attribute; no source repair",
+    "DebugBuild":  "IDE solution build successful after user stopped MCP server",
+    "TestSummary":  "Finished: 2026-09-24T22:00:49.9153865-04:00; elapsed: 00:00:00.1618909; 78 passed, 0 failed.",
+    "ObservedEnd":  "2026-09-24T22:07:10.6328285-04:00",
+    "PriorPlanProgressHistory":  "Exact preserved suffixes",
+    "ReleaseBuildExit":  0
+}

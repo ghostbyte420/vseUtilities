@@ -1,0 +1,14 @@
+  Determining projects to restore...
+  Restored C:\Users\aasro\Desktop\vseAgentRules_09172026_Latest\tests\RulesContractTests\RulesContractTests.csproj (in 733 ms).
+  1 of 2 projects are up-to-date for restore.
+  vseAgentRules -> C:\Users\aasro\Desktop\vseAgentRules_09172026_Latest\vseAgentRules\bin\Debug\net10.0\vseAgentRules.dll
+C:\Users\aasro\Desktop\vseAgentRules_09172026_Latest\tests\RulesContractTests\Program.cs(135,38): warning CA1861: Prefer 'static readonly' fields over constant array arguments if the called method is called repeatedly and is not mutating the passed array (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1861) [C:\Users\aasro\Desktop\vseAgentRules_09172026_Latest\tests\RulesContractTests\RulesContractTests.csproj]
+  RulesContractTests -> C:\Users\aasro\Desktop\vseAgentRules_09172026_Latest\tests\RulesContractTests\bin\Debug\net10.0\RulesContractTests.dll
+
+Build succeeded.
+
+C:\Users\aasro\Desktop\vseAgentRules_09172026_Latest\tests\RulesContractTests\Program.cs(135,38): warning CA1861: Prefer 'static readonly' fields over constant array arguments if the called method is called repeatedly and is not mutating the passed array (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1861) [C:\Users\aasro\Desktop\vseAgentRules_09172026_Latest\tests\RulesContractTests\RulesContractTests.csproj]
+    1 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:06.90

@@ -1,0 +1,10 @@
+# vseUOAware tile roles - YOU own this file. Tools read it; they never guess roles.
+# Format:  kind | id or id-range (decimal or 0x hex) | role | note
+# kind = land (land tile id) or static (item id as stored in the map/statics, NOT +0x4000)
+# Lines starting with # are ignored. Later lines override earlier ones.
+# CONFIRMED = stated by ghostbyte. DRAFT = taken from data seen, please correct.
+
+land   | 76-79       | shallow-bed             | CONFIRMED 76 (brown shallow-water bed); 77-79 DRAFT seen under water statics
+land   | 168-171     | deep-water-land         | DRAFT tiledata Wet land tiles, no statics (current Map4)
+static | 6039-6044   | shallow-water           | DRAFT water statics over beds 76-79
+static | 6045-6066   | water-transition-cap    | CONFIRMED by ghostbyte (Fiddler: name 'water', Wet). Never move or exclude.

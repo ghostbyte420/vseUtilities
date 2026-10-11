@@ -1,0 +1,4 @@
+Final IDE project build: FAILED (environment lock; not accepted as a passing build).
+Project: C:\Users\aasro\Desktop\vseAgentRules\vseAgentRules\vseAgentRules.csproj
+MSB3027 / MSB3021 at Microsoft.Common.CurrentVersion.targets line 5475: could not copy obj\Debug\net10.0\apphost.exe to bin\Debug\net10.0\vseAgentRules.exe; retry count 10 exceeded. Live process vseAgentRules (55792) locks destination.
+The live server was not terminated. Final validation uses a separate Release solution build and the Release console harness. Debug rebuild requires releasing that executable lock; deployment/restart is outside this change.

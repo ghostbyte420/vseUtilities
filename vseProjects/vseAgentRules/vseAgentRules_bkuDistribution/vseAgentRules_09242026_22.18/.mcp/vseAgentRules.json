@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "vseAgentRules": {
+      "type": "stdio",
+      "command": "C:\\Users\\aasro\\Desktop\\vseAgentRules\\vseAgentRules_09172026_Latest\\vseAgentRules\\bin\\Release\\net10.0\\vseAgentRules.exe",
+      "args": []
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "servers": {
+    "vseAgentRules": {
+      "type": "stdio",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "C:\\Users\\aasro\\Desktop\\vseAgentRules\\vseAgentRules\\vseAgentRules.csproj",
+        "--no-launch-profile"
+      ]
+    },
+    "vseMediaSearch": {
+      "type": "stdio",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "C:\\Users\\aasro\\Desktop\\vseMediaSearch\\vseMediaSearch\\vseMediaSearch.csproj",
+        "--no-launch-profile"
+      ]
+    },
+    "vseUOAware": {
+      "type": "stdio",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "C:\\Users\\aasro\\Desktop\\vseUOAware\\vseUOAware\\vseUOAware.csproj",
+        "--no-launch-profile"
+      ]
+    }
+  }
+}
