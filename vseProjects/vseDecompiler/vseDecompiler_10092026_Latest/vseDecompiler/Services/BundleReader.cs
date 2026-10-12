@@ -44,6 +44,31 @@ internal static class BundleReader
         return sb.ToString();
     }
 
+    public static string Investigate(string path, string keyword, int max)
+    {
+        if (string.IsNullOrWhiteSpace(keyword)) return "Give a keyword describing the feature.";
+        var temp = Path.Combine(Path.GetTempPath(), "vseDecompilerBundle_" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            Directory.CreateDirectory(temp);
+            var res = Extract(path, temp, true);
+            var dir = Path.Combine(temp, Path.GetFileNameWithoutExtension(path) + "_bundle");
+            if (!Directory.Exists(dir)) return res;
+            var sb = new StringBuilder($"# Bundle investigation: '{keyword}' in {Path.GetFileName(path)}\nEvidence only. Assemblies were read from a private temp copy that is removed afterwards.\n\n");
+            foreach (var dll in Directory.EnumerateFiles(dir, "*.*", SearchOption.AllDirectories)
+                         .Where(f => f.EndsWith(".dll", StringComparison.OrdinalIgnoreCase) || f.EndsWith(".exe", StringComparison.OrdinalIgnoreCase))
+                         .OrderBy(f => f, StringComparer.OrdinalIgnoreCase))
+            {
+                var m = FeatureInvestigator.SearchMembers(dll, keyword, max);
+                var s = FeatureInvestigator.ExtractStrings(dll, keyword, max);
+                if (m.StartsWith("0 shown") && s.StartsWith("0 shown")) continue;
+                sb.AppendLine("## " + Path.GetFileName(dll)).AppendLine(m).AppendLine(s);
+            }
+            return sb.Length > 0 ? sb.ToString() : res;
+        }
+        finally { try { Directory.Delete(temp, true); } catch (IOException) { } }
+    }
+
     public static string Extract(string path, string outputFolder, bool assembliesOnly)
     {
         if (!TryOpen(path, out var h, out _, out var err)) return err;

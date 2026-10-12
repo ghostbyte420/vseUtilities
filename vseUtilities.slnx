@@ -13,13 +13,13 @@
   <Folder Name="/vseProjects/vseAgentRules/">
     <Project Path="vseProjects/vseAgentRules/vseAgentRules_09272026_Latest/vseAgentRules/vseAgentRules.csproj" />
   </Folder>
-  <Folder Name="/vseProjects/vseDecompiler/" Id="219d77d6-e06b-a013-6c51-06e263af83d8">
+  <Folder Name="/vseProjects/vseDecompiler/">
     <Project Path="vseProjects/vseDecompiler/vseDecompiler_10092026_Latest/vseDecompiler/vseDecompiler.csproj" />
   </Folder>
   <Folder Name="/vseProjects/vseMediaSearch/">
     <Project Path="vseProjects/vseMediaSearch/vseMediaSearch_09272026_Latest/vseMediaSearch/vseMediaSearch.csproj" />
   </Folder>
-  <Folder Name="/vseProjects/vseTranslator/" Id="4307ccd4-62b7-c97e-54a4-8a154ec9d96e">
+  <Folder Name="/vseProjects/vseTranslator/">
     <Project Path="vseProjects/vseTranslator/vseTranslator_10102026_Latest/vseTranslator/vseTranslator.csproj" />
   </Folder>
   <Folder Name="/vseProjects/vseUOAware/">

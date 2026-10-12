@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-11 (4) - Rules 25(F), 26(D)(F)(G)(M): 26(H) consolidation trim
+
+- Trimmed duplicated wording only; no obligation removed and no rule renumbered or added (26M). 25(F): dropped a closing sentence that repeated 25(E)'s honest-limit statement. 26(D): dropped a repeated 'under any circumstance' (26(A) and 26(L) already say Tier 1 is never overridden). 26(F): merged the template-mirror sentence into one. 26(G): dropped a trailing restatement of 25(E). 26(M): dropped the explanatory sentence after the prohibition. Backup of the prior file: Desktop\AgentRules.cs.bak_pre26H.
+
+## 2026-10-11 (3) - Rule 9(B): lightweight test traceability
+
+- Added item 5 to Rule 9(B): each requirement or fix must name the test(s) that cover it (chunk row or PROGRESS.md); anything without a test is marked UNTESTED with the reason. No new clause or table (26M). Rule 26(A) Tier 1 line reworded to 'Rule 17 (Secrets), Rule 18 ..., clauses A-D of each only' with the same meaning, because the contract test's tier parser read the 17(A)-(D)/18(A)-(D) form as extra tier entries. The 26(H) consolidation pass is not done yet.
+
 ## 2026-10-10 (5) - Rules 4, 8(O), 17, 18, 20(B), 26(A): tier fix and changelog format
 
 - Fixed a priority conflict: the S1/Tier 1 hard-pause triggers in Rule 4, 8(O), 26(A) and the PlanOutlineTemplate legend now name Rule 17(A)-(D) and 18(A)-(D) only. The newer 17(E)-(F) and 18(E) are stated to be routine Tier 2 safeguards, so ordinary code edits no longer count as S1.

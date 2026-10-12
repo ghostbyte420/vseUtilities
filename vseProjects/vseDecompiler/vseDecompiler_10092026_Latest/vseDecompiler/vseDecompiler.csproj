@@ -26,6 +26,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+	<InternalsVisibleTo Include="vseDecompiler.Tests" />
 	<PackageReference Include="ICSharpCode.Decompiler" Version="11.1.0.9782" />
 	<PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.12" />
 	<PackageReference Include="ModelContextProtocol" Version="2.2.0" />

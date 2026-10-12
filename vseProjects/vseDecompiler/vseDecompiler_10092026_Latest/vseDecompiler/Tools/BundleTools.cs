@@ -12,6 +12,14 @@ internal class BundleTools
         [Description("Maximum entries to list. Default 300.")] int maxResults = 300)
         => BundleReader.List(exePath, maxResults);
 
+    [McpServerTool(Name = "bundle_investigate")]
+    [Description("Read-only. One step: opens a .NET single-file bundle, searches every packed assembly for a feature keyword (type/member names and string literals) and reports evidence per assembly. Uses a private temp copy that is removed afterwards.")]
+    public string BundleInvestigate(
+        [Description("Full path to the bundled .exe.")] string exePath,
+        [Description("Keyword describing the feature.")] string keyword,
+        [Description("Maximum results per assembly section. Default 20.")] int max = 20)
+        => BundleReader.Investigate(exePath, keyword, max);
+
     [McpServerTool(Name = "extract_bundle")]
     [Description("Extracts the files packed inside a .NET single-file bundle to a new '<name>_bundle' subfolder so the assemblies can be decompiled. Never modifies the original; refuses to write into a non-empty folder.")]
     public string ExtractBundle(

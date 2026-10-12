@@ -11,3 +11,7 @@ Use it to check a custom map, find mistakes before a shard sees them, and genera
 ---
 
 Licensed under GPL-3.0 (see LICENSE.md).
+
+MapCreator checks: find_missing_transitions lists Terrain.bmp 3x3 patterns that have no Transitions XML rule (official Blank group 19 ignored by default).
+
+- check_source_bitmaps: checks Terrain.bmp (8-bit indexed, size divisible by 8, optional Altitude.bmp size match) and that every palette index exists in Terrain.xml.

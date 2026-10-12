@@ -34,6 +34,15 @@ builder.Services
     .WithTools<MapEditorTools>()
     .WithTools<TransitionFitTools>()
     .WithTools<MapCreatorXmlTools>()
+    .WithTools<MissingTransitionTools>()
+    .WithTools<TransitionRepairTools>()
+    .WithTools<TerrainEditTools>()
+    .WithTools<TransitionCreateTools>()
+    .WithTools<TransitionAuditTools>()
+    .WithTools<CommonEditTools>()
+    .WithTools<MapCreatorXmlGuideTools>()
+    .WithTools<SourceAnalysisTools>()
+    .WithTools<SourceBitmapTools>()
     .WithTools<WaterTools>()
     .WithTools<TileRoleTools>();
 

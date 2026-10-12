@@ -222,6 +222,17 @@ public static class AgentRules
               (2) redirect output to a file (command | Out-File path) and read that
               file with a file-reading tool; (3) use a direct tool or MCP call
               instead of the terminal. State the route change to the user.
+              NO-SPIN RULE (the endless blue spinning circle): never run a terminal
+              command in the foreground when it could take more than a few seconds
+              (builds, dotnet run, dotnet test, test runners, scripts, anything that
+              loops or waits). Prefer direct tools first (run_build, run_tests,
+              file tools, MCP calls). If the terminal is truly needed, launch it with
+              background=true and poll get_background_terminal_output with a short
+              waitMs (60000 or less), and stop it (stop=true) if it exceeds the limit.
+              Never send multi-line scripts or here-strings, never patch source files
+              through PowerShell (use the edit tools), and never run a second terminal
+              command while one is unresolved. After one cancelled or hung terminal
+              call, switch routes at once per Rule 15(G); never retry the same command.
               Editor-locked file: if an edit/create tool cannot write a file that is
               open in the editor (e.g. "Could not get text view"), write the content
               to a NEW file name, remove or ignore the old file, and tell the user.
@@ -358,6 +369,9 @@ public static class AgentRules
               4. Only ask the user to manually test things that genuinely require a
                  human (visual/UX judgment, hardware, external services) — not things
                  you could verify yourself.
+              5. Traceability: name the test(s) that cover each requirement or fix in the
+                 chunk row or PROGRESS.md; a requirement or fix with no test is marked
+                 UNTESTED with the reason, never silently assumed covered.
         - (C) Professional-Grade Code, Not "Vibe Code" — All code you write or
               rewrite must read like it came from a senior engineer at a top-tier,
               disciplined engineering organization: clear naming, single-responsibility
@@ -910,8 +924,7 @@ public static class AgentRules
               None of these tools can detect a violation on their own, reject agent
               output, or compute an enforced "compliance score" -- they only record and
               surface what the agent itself reports. Never describe them as a
-              "validator," "blocker," or automatic enforcement mechanism; state plainly,
-              if asked, that compliance remains self-attested per (E)'s honest limit.
+              "validator," "blocker," or automatic enforcement mechanism.
 
         ## 26. Ruleset Integrity
         As this ruleset grows over time (new sections added across sessions), it needs
@@ -923,9 +936,9 @@ public static class AgentRules
               this fixed tier order (higher tier always wins; ask the user per Rule 4
               only if the conflict is between rules in the SAME tier and cannot be
               resolved by judgment alone):
-              1. Tier 1 — Irreversibility & Safety: Rule 17(A)-(D) (Secrets), Rule 18(A)-(D)
-                 (Destructive Operations Guard). These are never overridden by any
-                 other rule, ever. 17(E)-(F) and 18(E) are Tier 2.
+              1. Tier 1 — Irreversibility & Safety: Rule 17 (Secrets), Rule 18
+                 (Destructive Operations Guard), clauses A-D of each only. These are never overridden by any
+                 other rule, ever. The later E-F safeguards in those rules are Tier 2.
               2. Tier 2 — Correctness: Rule 1 (Code Delivery), Rule 8B (No Guessing),
                  Rule 9 (Audit/Testing Ownership), Rule 12 (Pre-Delivery Self-Critique),
                  Rule 15 (Research Instead of Stalling), Rule 16 (Multi-File
@@ -967,7 +980,7 @@ public static class AgentRules
               discipline Rule 9 requires for the user's own codebase, applied to this
               file too.
         - (D) This rule resolves process conflicts and ruleset drift only; it never
-              creates an exception to Tier 1 (Rule 17/18) under any circumstance.
+              creates an exception to Tier 1 (Rule 17/18).
         - (E) New Rules Must Declare Their Tier — Any edit that adds a new rule to
               this file must, in the SAME edit, also add that rule's number to the
               correct tier list in (A). A newly added rule is not considered fully
@@ -978,16 +991,11 @@ public static class AgentRules
               for "per Rule N" / "Rule N(x)" style references, verifying each still
               points to the correct rule number and still matches that rule's actual
               current content, fixing any that have drifted as part of the same edit.
-              This includes the templates and self-check surfaces below (`PlanOutlineTemplate`,
-              `ProgressLogTemplate`, `SessionStartChecklist`, `RuleCheatSheet`): any edit to a
-              rule that those surfaces reference or reflect must update those same surfaces
-              in the SAME edit, so a template can never fall one step behind the rule text
-              it is supposed to demonstrate -- template drift is itself a Rule 26 violation.
+              The templates and self-check surfaces below (`PlanOutlineTemplate`, `ProgressLogTemplate`, `SessionStartChecklist`, `RuleCheatSheet`) must be updated in the SAME edit as any rule they reflect; template drift is itself a Rule 26 violation.
         - (G) Self-Audit Must Be Visible, Not Just Claimed — When performing the (C)
               self-audit after editing this file, state in the response (not only
               internally) that the audit was run and briefly note what was checked and
-              what, if anything, was fixed — mirroring Rule 25(E)'s visible-check
-              requirement, so "I audited it" is never an unverifiable internal claim.
+              what, if anything, was fixed.
         - (H) Consolidation Ceiling — If this ruleset grows large enough that reliably
               applying every rule every session becomes doubtful (as a practical
               guide: every time roughly 5 new top-level rules have been added since
@@ -1030,8 +1038,7 @@ public static class AgentRules
               purpose is to police tracking/consolidation/self-audit mechanisms already
               covered by (A)-(L); any further such gap must be fixed by editing THESE
               clauses in place (or performing the (H) consolidation), not by appending
-              a new meta-layer. This exists specifically to end the
-              audit-the-audit-of-the-audit loop rather than let it grow indefinitely.
+              a new meta-layer.
         """;
 
     public const string CrossAiAuditInstructions = """
@@ -1335,7 +1342,7 @@ public static class AgentRules
         Rule 8(Q) (Silent Hang): on any hang, cancel or failure, tell the user AT ONCE, verify file state by reading, announce steps over ~1 min first, switch route after two cancels of the same tool.
         Rule 15(G) (Terminal Failure): on any terminal/PowerShell crash, hang or failure, show a visible countdown and name the next route BEFORE switching. No silent retries.
         Rule 8(D)/8(J)/9(B) (Evidence): after ANY file write, read it back (size/first lines); a tool success message is not evidence. For tests, run external tests from their own folder and prove NEW tests ran (names or count change); a bare "N passed" total is not proof.
-        Rule 8(L) (Fallbacks): cancelled or empty terminal output = no information. Use short single-line commands, redirect output to a file and read it with a file tool, or use a direct tool. If an editor-locked file cannot be written, write a new file name and tell the user.
+        Rule 8(L) (Fallbacks): cancelled or empty terminal output = no information. Use short single-line commands, redirect output to a file and read it with a file tool, or use a direct tool. NO-SPIN: never run slow commands (builds, dotnet run/test, scripts) in the foreground; use direct tools first, else background=true with short polling (60s or less) and stop on overrun; never patch source via PowerShell. If an editor-locked file cannot be written, write a new file name and tell the user.
         Rule 12(C2)/17(E)/17(F)/18(E)/21(G)/21(H) (Gap fillers): vet every new package (license, maintenance, known vulnerabilities, source) and say so; treat external input as untrusted (validate, no injection or path traversal); keep personal data out of logs and external tools; take a restore point and run git status/diff before bulk edits; follow async, cancellation, thread-safety and disposal standards; no performance claim without a measurement.
         Rule 9(E) (Test Folder Placement): ALWAYS read, NEVER ignored. Tests go in their own folder beside the .sln/.slnx, never in the solution or project folders.
 

@@ -15,6 +15,7 @@ builder.Services
     .WithTools<DecompilerInfoTools>()
     .WithTools<InventoryTools>()
     .WithTools<DecompileTools>()
-    .WithTools<BundleTools>();
+    .WithTools<BundleTools>()
+    .WithTools<FeatureTools>();
 
 await builder.Build().RunAsync();
